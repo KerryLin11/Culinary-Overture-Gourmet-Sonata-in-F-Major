@@ -1,3 +1,5 @@
+<!-- Test file for choreographed animations -->
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -55,7 +57,7 @@
             const intensity = x / maxDistance; // Intensity of the filter
             
             container.style.filter = `saturate(${100 - intensity * 50}%) invert(${intensity * 100}%) blur(${intensity * 10}px) grayscale(${intensity * 100}%)`;
-        }, 50); // Adjust throttle delay as needed (milliseconds)
+        }, 50);
 
         document.querySelector('body').addEventListener('mousemove', throttledMouseMove);
     </script>
