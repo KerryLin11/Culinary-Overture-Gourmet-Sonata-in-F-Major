@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            overflow: hidden;
+        }
+
+        .container {
+            width: 100vw;
+            height: 100vh;
+            background-image: url("images/scene1.png");
+            background-size: cover;
+            background-position: center;
+            opacity: 1; /* Initial opacity */
+            filter: saturate(100%) invert(0%) blur(0px) grayscale(0%); /* Initial filters */
+            transition: filter 0.3s ease, opacity 0.3s ease; /* Smooth transition for filter and opacity changes */
+            animation: shake 0.1s infinite; /* Shake animation */
+        }
+
+        @keyframes shake {
+            0% { transform: translate(-5px, -5px); }
+            25% { transform: translate(5px, 5px); }
+            50% { transform: translate(-5px, 5px); }
+            75% { transform: translate(5px, -5px); }
+            100% { transform: translate(-5px, -5px); }
+        }
+    </style>
+</head>
+<body>
+    <div class="container"></div>
+
+    <script>
+        function throttle(callback, delay) {
+            let lastTime = 0;
+            return function() {
+                const now = new Date().getTime();
+                if (now - lastTime >= delay) {
+                    callback.apply(null, arguments);
+                    lastTime = now;
+                }
+            };
+        }
+
+        const throttledMouseMove = throttle(function(e) {
+            const container = document.querySelector('.container');
+            const rect = container.getBoundingClientRect();
+            const x = e.clientX - rect.left;
+            const maxDistance = rect.width / 2; // Maximum distance from the center
+            const intensity = x / maxDistance; // Intensity of the filter
+            
+            container.style.filter = `saturate(${100 - intensity * 50}%) invert(${intensity * 100}%) blur(${intensity * 10}px) grayscale(${intensity * 100}%)`;
+        }, 50); // Adjust throttle delay as needed (milliseconds)
+
+        document.querySelector('body').addEventListener('mousemove', throttledMouseMove);
+    </script>
+</body>
+</html>

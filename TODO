@@ -1,0 +1,100 @@
+// TODO LIST:
+
+    ///// TODO: Scene Transition Elements
+    ///// TODO: Dialogue Elements
+    ///// TODO: Character Elements
+    ///// TODO: Overlay Elements
+    ///// TODO: Audio Elements
+    ///// TODO: Character Transitions
+    ///// TODO: Character Animations
+    ///// TODO: Text Animations
+    ///// TODO: Text Speeds
+    ///// TODO: Color and Element Styling 
+    ///// TODO: Allow for multiple textTrees
+    ///// TODO: Scene Transitions
+    ///// TODO: Session Storage
+    ///// TODO: Scene Manager
+    ///// TODO: Text Tree Manager
+    ///
+    //? TODO: Interactive Elements
+
+    ///// TODO: Dialogue Options (Quizzes/Storybranching Decisions)
+    ///// TODO: Observation Mode
+    ///// TODO: Pick Up Item Mode
+    ///// TODO: Drawing Mode
+
+    //? Dialogue Options
+
+    ///// TODO: Tasting Minigame
+    ///// TODO: Guess the Ingredient
+    ///// TODO: Rate the Dish
+    ///// TODO: Food Trivia
+    ///// TODO: Ingredient Gathering Quest
+
+    //? Text Input
+    ///// TODO: Player input reviews  of cuisine
+
+
+    //? Misc
+
+    //!! TODO: Complete all dialogue trees
+    //!! TODO: Uncomment Session Storage in Scene Manager
+    //!! TODO: SFX
+
+
+    //!! Tools List
+
+        Interactables:
+            Clickable Objects 
+                Switch textNode // Click to switch textNode
+                Magnify Item // Click to magnify item
+            Drawing Canvas // Drawing canvas
+            Food Reviews // User input reviews of cuisine
+
+        Transitions
+            setBGImage(imageUrl)
+            redirectToScene(sceneNumber)
+
+        Sprite Animations:
+            moveLeft(distance, duration)
+            moveRight(distance, duration)
+            moveDown(distance, duration)
+            resetSpritePosition(duration)
+
+            spiralAnimation(duration, loops, maxRadius)
+            bounceAnimation(distance, duration, frequency, amplitude)
+            sineAnimation(direction, distance, duration, frequency, amplitude)
+            scaredAnimation(distance, duration)
+            spinAnimation(duration, repeatCount)
+            shakeAnimation(distance, duration, repeat)
+
+            changeSprite(spritePath, duration) // eg. sprites.Suri.happy
+
+            showSprite(fadeInDuration)
+            hideSprite(fadeOutDuration)
+
+            setSpriteFilter(saturation, invert, blur, grayscale)
+
+        Overlay Functions:
+            fadeToOverlay(newOverlayUrl, selectedOverlay)
+            fadeOutOverlay(selectedOverlay)
+
+            fadeToBlack(duration)
+            fadeOutBlack(duration)
+
+        Dialogue Box Functions:
+            // Magnify Interaction
+            demagnifyItem()
+            magnifyItem(itemURL)
+
+            // Display image above textBox
+            showDisplayImage(duration)
+            hideDisplayImage(duration)
+
+            hideTextbox(delay)
+            showTextbox(delay)
+            hideAllContainers(spriteDelay, dialogueBoxDelay)
+            showAllContainers(spriteDelay, dialogueBoxDelay)
+        
+        Audio Functions:
+            fadeAudio(audio, newVolume, duration, defaultOldVolume)

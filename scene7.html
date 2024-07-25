@@ -1,0 +1,110 @@
+<!--! Head -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link href="game.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Schoolbell&v1" rel="stylesheet">
+  <link rel="icon" href="images/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="foods.css">
+
+
+  <script defer src="game.js"></script>  <!-- waits for html to parse -->
+  <script src="jquery-3.7.1.min.js"></script>
+  <script defer src="foods.js"></script>
+
+  <title>Culinary Overture: Gourmet Sonata in F Major</title>
+</head>
+
+<!--! Body -->
+<body style="background-image: url(images/bgs/bedroom.png);">
+
+<!--* BGM -->
+<audio loop id="sinclair"><source src="sounds/bgm/Minuetto.m4a" type="audio/mp3"></audio>
+<audio loop id="assistant" src="sounds/bgm/assistant.mp3" type="audio/mp3"></audio>
+<audio loop id="whiteNoise" src="sounds/bgm/whiteNoise.mp3" type="audio/mp3"></audio>
+<audio loop id="kitchen" src="sounds/bgm/kitchen.mp3" type="audio/mp3"></audio>
+<audio loop id="relax" src="sounds/bgm/relax.mp3" type="audio/mp3"></audio>
+<audio loop id="coastTheme" src="sounds/bgm/coast.mp3"></audio>
+<audio loop id="fontaine" src="sounds/bgm/fontaine.mp3"></audio>
+<audio loop id="guitar" src="sounds/bgm/guitar.mp3"></audio>
+<audio loop id="drama" src="sounds/bgm/drama.mp3"></audio>
+<audio loop id="city" src="sounds/bgm/city.mp3"></audio>
+<audio loop id="kitchenNoise" src="sounds/bgm/kitchenNoise.wav"></audio>
+<audio loop id="anticipation" src="sounds/bgm/anticipation.mp3"></audio>
+<audio loop id="kimura" src="sounds/bgm/kimura.mp3"></audio>
+<audio loop id="night" src="sounds/bgm/night.mp3"></audio>
+<audio loop id="crickets" src="sounds/bgm/crickets.m4a"></audio>
+<audio loop id="duval" src="sounds/bgm/duval.mp3"></audio>
+<audio loop id="hype" src="sounds/bgm/hype.mp3"></audio>
+<audio loop id="finalDay" src="sounds/bgm/finalDay.mp3"></audio>
+<audio loop id="bird" src="sounds/bgm/bird.wav"></audio>
+<audio loop id="market" src="sounds/bgm/market.mp3"></audio>
+<audio autoplay loop id="persevere" src="sounds/bgm/persevere.mp3"></audio>
+<audio loop id="love" src="sounds/bgm/love.mp3"></audio>
+
+
+<!--* Sfx -->
+<audio id="clickSFX"><source src="sounds/sfx/click.wav" type="audio/wav"></audio>
+<audio id="textScrollSFX"><source src="sounds/sfx/textScrollLoud.wav"></audio>
+<audio loop id="driveSFX"><source src="sounds/sfx/driving.mp3"></audio>
+
+
+<!--* Interactivity -->
+<div class="interactableObjects" onclick="changeText(177)">
+  <img id="rock"
+    src="images/interactiveObjects/rock.png"
+    style="left: -300px; bottom: 500px;"
+  ></img>
+  <img style="display: none; left: 0px; bottom: 500px; width: 200px; height: 200px;" id="displayImage"" src="" alt="Saved Drawing">
+</div>
+
+<!-- ? Review Input -->
+
+<div class="textInputContainer">
+  <div class="image-container">
+      <img id="food-image" src="" alt="Food Image">
+  </div>
+  <div class="content-container">
+      <div class="food-details">
+          <h2 id="food-name"></h2>
+          <p id="food-description"></p>
+      </div>
+      <div class="review-form">
+          <textarea id="review-text" placeholder="Your Professional Review" required></textarea>
+          <button id="submit-review">Submit Review</button>
+      </div>
+  </div>
+</div>
+
+
+<!--* Dialogue Box-->
+<div class="dialogueBox">
+  <h1 class ="characterName">John Smith:</h1>
+  <div id="text">Text</div>
+  <div id="option-buttons" class="btn-grid">
+    <button class="btn">Button 1 Template</button>
+  </div>
+</div>
+
+<!--* Character Sprite Container -->
+<div class ="characterContainer"><img class="characterSprite" src="" alt="Character Sprite"></div>
+
+<!--* Overlays -->
+
+<!--? Black Overlay -->
+<div class="blackOverlay"></div>
+
+<!--? Other Overlays -->
+<div class="overlay FXOverlay"></body></div>
+
+<!--* Local Scripting -->
+
+<script>
+
+</script>
+
+</body>
+</html>

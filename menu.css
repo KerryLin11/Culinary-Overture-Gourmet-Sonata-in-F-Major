@@ -1,0 +1,94 @@
+/** Defaults */
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-family: 'Schoolbell', arial, serif;
+    font-size: calc(1vw + 1vh);
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    border: 10px solid rgb(0, 0, 0); /* black border */
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+
+    background-color: #333;
+    background-image: url("images/menuBG.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0);
+    animation: fluctuateOpacity 3s infinite alternate; /* alternate: goes back and forth 0 -> 1 -> 0 -> 1 */
+}
+
+@keyframes fluctuateOpacity {
+    0% {
+        background-color: rgba(0, 0, 0, 0);
+    }
+    100% {
+        background-color: rgba(0, 0, 0, 0.4);
+    }
+}
+
+/** Overlay */
+
+.overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    opacity: 1;
+    background-color: rgba(0, 0, 0, 0);
+    transition: background-color 2.5s;
+    z-index: 0;
+}
+
+.overlay.active {
+    background-color: rgba(0, 0, 0, 1);
+    z-index: 999;
+}
+
+/** Menu Title */
+
+.menuTitle {
+    font-family: 'Schoolbell', cursive;
+    font-size: 2em;
+    color: rgb(231, 231, 231);
+    margin-top: 20px;
+    text-shadow: 5px 5px 5px rgba(0, 0, 0, 0.637);
+    cursor: pointer;
+    text-decoration: none;
+    outline: none;
+    position: relative;
+    z-index: 1;
+    transition: transform 0.24s ease-out, opacity 2s ease-out;
+}
+
+.menuTitle:hover {
+    opacity: 0.3;
+    transform: scale(1.3) rotate(0.5deg); /* Scale up and rotate slightly on hover */
+}
+
+.menuTitle a {
+    color: inherit;
+    text-decoration: inherit;
+    font-size: inherit;
+}

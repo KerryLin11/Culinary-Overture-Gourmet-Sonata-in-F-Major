@@ -1,0 +1,252 @@
+/** Globals */
+
+*, *::before, *::after {
+  box-sizing: border-box;
+  font-family: 'Schoolbell', arial, serif;
+  font-size: 1.75vw;
+}
+
+@font-face {
+  font-family: 'Schoolbell';
+  src: url('Schoolbell-Regular.ttf');
+}
+
+body {
+  padding: 0;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  width: 100vw;
+  height: 100vh;
+
+  background-color: #333;
+  background-image: url("images/bgs/bedroom.png");
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+
+  overflow: hidden;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translate(0, 0); }
+  5%, 15%, 25%, 35%, 45%, 55%, 65%, 75%, 85% { transform: translate(-10px, -10px); }
+  10%, 20%, 30%, 40%, 50%, 60%, 70%, 80%, 90% { transform: translate(10px, -10px); }
+  12%, 28%, 34%, 57%, 70% { transform: translate(30px, -10px); }
+  18%, 42%, 63%, 78% { transform: translate(-10px, 30px); }
+  22%, 50%, 66%, 88% { transform: translate(0px, -30px); }
+  32%, 60%, 80% { transform: translate(-30px, 0px); }
+}
+
+body.shake {
+  animation: shake 1s infinite;
+}
+
+.blur {
+  filter: blur(3px);
+}
+
+
+/** Interactivity */
+
+.interactableObjects {
+  width: 10vw; 
+  height: 10vw; 
+  position: absolute; 
+  top: 20%; 
+  left: 30%; 
+}
+
+.interactableObjects img {
+  width: 100%;
+  height: 100%;
+}
+
+/** Display Images */
+
+.displayImage {
+  position: absolute; 
+  top: 20%; 
+  left: 30%; 
+  border: 5px solid #ff96f1;
+  background-color: #ffcdc9;
+  background-image: url(images/textBoxPatterns/8.png);
+  box-shadow: 0 -10px 30px 20px rgba(0, 0, 0, 0.295);
+
+}
+
+.displayImage img {
+  width: 100%;
+  height: 100%;
+}
+
+/** Overlays */
+
+/*? Overlay Parent */
+
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0;
+  transition: opacity 2.5s;
+  z-index: 1;
+  background-repeat: no-repeat;
+  pointer-events: none;
+}
+
+.overlay.active {
+  opacity: 1;
+}
+
+/*? Overlay Children */
+
+.FXOverlay {
+  background-image: url(images/blackOverlay.png);
+  background-size: cover;
+  z-index: 3
+}
+
+.magnifyItemOverlay {
+  display: block;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  background-image: url(''); 
+  background-size: contain; /* Ensure whole image fits within overlay */
+  background-position: center; /* Center image within overlay */
+  background-repeat: no-repeat; /* Prevent repeating */
+  z-index: 12;
+  overflow: auto; /* Allow scrolling if img > windowSize */
+}
+
+
+
+/*? Black Overlay */
+
+.blackOverlay {
+  width: 100vw;
+  height: 100vh;
+  display: block;
+  background-image: url(images/blackOverlay.png);
+  background-size: cover;
+  z-index: 10;
+  opacity: 1;
+  pointer-events: all;
+}
+
+/** Character Sprites */
+
+.characterContainer {
+  pointer-events: none;
+  position: absolute;
+  left: 50%; /* Center horizontally */
+  top: 50%; /* Center vertically */
+  transform: translate(-50%, -50%);
+  display: inline-block;
+  max-width: 100%; 
+  max-height: 100%; 
+  overflow: hidden; 
+}
+
+.characterContainer img {
+  max-width: 100%;
+  max-height: 100%; /* Ensure images do not exceed container height */
+  height: auto;
+  display: block; 
+  border-radius: 10px;
+  padding: 5px; 
+  cursor: default;
+  font-weight: bold;
+  color: rgba(78, 78, 78, 0.774);
+  font-family: 'Schoolbell', cursive; 
+  font-size: 20px;
+  text-align: center;
+}
+
+
+/** Dialogue Box */
+
+.dialogueBox {
+  width: 100%;
+  max-width: 100%;
+  padding: 10px;
+  border-radius: 5px;
+  box-shadow: 0 -10px 30px 20px rgba(0, 0, 0, 0.75);
+  position: absolute;
+  bottom: 0;
+  z-index: 9;
+  background-image: url('images/textBoxPatterns/6.png');
+  background-color: rgb(255, 255, 255);
+  background-repeat: repeat;
+  background-attachment: fixed;
+  font-weight: bolder;
+  color: #333333;
+}
+
+.btn-grid {
+  display: grid;
+  grid-template-columns: repeat(2, auto);
+  gap: 10px;
+  margin-top: 25px;
+  grid-column-gap: 20px;
+}
+
+.btn {
+  background-color: #ff30b0a1;
+  background-repeat: round;
+  
+  border: 1px solid hsl(200, 100%, 30%);
+  border-radius: 5px;
+  padding: 5px 20px;
+  color: rgb(255, 255, 255);
+  outline: none;
+}
+
+.btn:hover,
+.btn:focus {
+  border-color: black;
+  background-color: #ff489d;
+  cursor: pointer;
+}
+
+/* Nice Character Name Colours
+ff144e
+005a5a
+483D8B
+hsl(248, 100%, 73%)
+*/
+
+.characterName {
+  display: inline-block;
+  padding: 5px;
+  margin: 0;
+  font-family: 'Schoolbell', cursive;
+  color: hsl(248, 100%, 73%);
+  margin-bottom: 0px;
+  margin-left: 27px;
+  animation: moveName 2s infinite; 
+  font-size: 2.35vw;
+  text-shadow: -2px   -2px  0 rgb(56, 56, 56),  
+                1px   -1px  0 rgb(124, 124, 124),
+                0.2px 0.2px 0 rgb(255, 255, 255),
+                0px   0px   0 rgb(255, 255, 255);
+}
+
+@keyframes moveName {
+  0% {
+    transform: translateX(10px) scale(1.4);
+  }
+  50% {
+    transform: translateX(10px) scale(1.2);
+  }
+  100% {
+    transform: translateX(10px) scale(1.4);
+  }
+}

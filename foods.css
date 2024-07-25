@@ -1,0 +1,73 @@
+.textInputContainer {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 20px;
+    display: flex;
+    align-items: flex-start; 
+    background-color: #ffcdc9;
+    background-image: url(images/textBoxPatterns/7.png);
+    box-shadow: 0 -10px 50px 20px rgba(0, 0, 0, 0.75);
+    position: fixed; 
+    top: 20px; 
+}
+
+.image-container {
+    flex: 0 0 auto; /* Do not grow, shrink or change size */
+    margin-right: 20px;
+}
+
+.image-container img {
+    max-width: 325px;
+    border-radius: 5px;
+    padding: 0px;
+    border: 8px solid transparent;
+    border-image: linear-gradient(to right, #da9fd5, #82addb); /* Apply gradient to the border */
+    border-image-slice: 1; 
+    transition: border-image 0.3s ease; 
+}
+
+.content-container {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+}
+
+#food-name {
+    font-size: 24px;
+    font-weight: bold;
+}
+
+#food-description {
+    font-style: italic;
+    font-weight: lighter;
+    font-size: 20px;
+    /* text-decoration: underline; */
+}
+
+.food-details,
+.review-form {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+#submit-review {
+    display: block;
+    margin: 0 auto; /* Align to the center horizontally */
+}
+
+#review-text {
+    resize: none;
+    width: calc(100% - 20px);
+    max-width: 300px;
+    height: 100px;
+    margin-bottom: 10px;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
