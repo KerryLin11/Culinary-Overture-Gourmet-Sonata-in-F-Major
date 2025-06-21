@@ -8753,6 +8753,7 @@ function resetBackgroundFilter() {
         relax.play();
       } else if (currentTextID === 64) {
         resetAudio();
+        resetSpriteX(100);
         assistantTheme.play()
       } else if (currentTextID === 68) {
         changeSprite(sprites.Assistant.default)
